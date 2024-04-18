@@ -1,11 +1,8 @@
 package main
 
-import (
-	"fmt"
-	"github.com/demirbey05/golang-starter/internals/greeting"
-)
+import "github.com/demirbey05/golang-starter/internals/routers"
 
 func main() {
-
-	fmt.Println(greeting.Greet())
+	e := routers.InitRoutes()
+	e.Logger.Fatal(e.Start(":8080"))
 }
